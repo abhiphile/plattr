@@ -3,7 +3,9 @@ Everything on one platter – orders, deals & growth
 
 A unified, AI-powered assistant that empowers merchants to manage all their aggregator platforms (Swiggy, Zomato, Magicpin, ONDC, and more) from a single conversational interface. The Merchant Assistant automates operational tasks, provides proactive alerts, and surfaces actionable insights—helping merchants save time, reduce errors, and maximize revenue.
 
-[![Demo](assets/plattr-demo.gif)](assets/plattr-demo.mp4)
+<a href="assets/plattr-demo.mp4">
+  <img src="assets/plattr-demo.gif" width="800"/>
+</a>
 
 ---
 
