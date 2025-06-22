@@ -20,7 +20,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 - **Unified Platform Management:** Update offers, timings, and campaigns across Swiggy, Zomato, Magicpin, ONDC, and more.
 - **Secure Portal Integration:** Securely log in and perform actions on partner portals.
 - **Agentic AI:** 
-  - Autonomously completes multi-step tasks (e.g., “Run a weekend discount similar to my last Diwali promo”).
+  - Autonomously completes multi-step tasks (e.g., "Run a weekend discount similar to my last Diwali promo").
   - Proactively alerts merchants about anomalies (deductions, rating drops), seasonal opportunities, and competitor trends.
 - **Proactive Monitoring:** Detects and notifies about operational issues before they impact revenue.
 
@@ -43,6 +43,186 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
   ├── assets/          # Static assets
   └── src/             # Frontend source code
 ```
+
+---
+
+## ⚙️ Tech Stack
+
+### Frontend
+- **React 18** (TypeScript)
+- **Vite** (build tool)
+- **Shadcn/ui** (Radix UI primitives)
+- **Tailwind CSS** (custom merchant-themed variables)
+- **TanStack Query** (server state management)
+- **Wouter** (routing)
+- **Chart.js** (analytics visualization)
+
+### Backend
+- **Node.js** (TypeScript)
+- **Express.js** (REST API)
+- **PostgreSQL** (Neon Database, serverless)
+- **Drizzle ORM** (type-safe DB operations)
+- **OpenAI GPT-4o** (AI assistant)
+- **Connect-pg-simple** (session storage)
+
+---
+
+## 🗄️ Database Schema
+
+- **Merchants:** Profile, contact, store timings, delivery settings
+- **Platforms:** Connections, credentials, sync status
+- **Offers:** Promotions, discount types, scheduling
+
+---
+
+## 🧠 AI Assistant
+
+- Context-aware chat for offers, promotions, settings, and analytics
+- OpenAI GPT-4o integration
+- Conversation history and context persistence
+- Action suggestions and workflow automation
+
+---
+
+## 📊 Analytics & Reporting
+
+- Revenue, order tracking, and growth metrics
+- Chart visualizations and platform comparisons
+- PDF report generation
+- Real-time data refresh
+
+---
+
+## 🚦 Alerting & Monitoring
+
+- Real-time alert monitor (deductions, rating drops, anomalies)
+- Notification system (email, Telegram)
+- Emergency controls (shutdown, pause orders, holiday mode)
+- Mobile-optimized dashboard
+
+---
+
+## 🤖 Browser Automation Setup
+
+Some platform actions (such as logging into Swiggy, Zomato, or Magicpin portals) are performed using a Python-based browser automation agent.
+
+### 1. Install Python Dependencies
+
+Ensure you have Python 3 and pip installed. Then run:
+
+```sh
+pip3 install -r requirements.txt
+```
+
+### 2. Environment Variables
+
+The `.env` file should include your OpenAI API key and database URL, which are used by both the Node.js and Python services.
+
+### 3. Running Browser Automation
+
+The browser automation agent is invoked automatically by the backend when required.  
+You can also run it manually for testing:
+
+```sh
+python3 scripts/browser_agent.py '{"task": "login", "platform": "swiggy"}'
+```
+
+### 4. Automated Setup
+
+You can use the provided setup script to automate the above steps:
+
+```sh
+bash setup-browser-automation.sh
+```
+
+This will:
+- Install Python and Node.js dependencies
+- Create a `.env` file if it doesn't exist
+- Remind you to update your API keys and database URL
+
+---
+
+**Browser automation endpoints:**
+- `POST /api/platforms/connect` (with browser automation)
+- `POST /api/platforms/action` (with browser automation)
+- `POST /api/browser/execute` (direct browser tasks)
+- `GET /api/tasks/:taskId` (check task status)
+
+---
+
+## 🏁 Setup Instructions
+
+### Prerequisites
+
+- Node.js (v18+)
+- npm (v9+)
+- PostgreSQL database (Neon or local)
+- [Optional] OpenAI API key for AI features
+
+### 1. Clone the Repository
+
+```sh
+git clone https://github.com/your-org/plattr.git
+cd plattr
+```
+
+### 2. Install Dependencies
+
+```sh
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the root directory and set the following variables:
+
+```env
+DATABASE_URL=your_postgres_connection_string
+OPENAI_API_KEY=your_openai_api_key
+SESSION_SECRET=your_session_secret
+PORT=8080
+```
+
+### 4. Database Setup
+
+Run migrations and seed data:
+
+```sh
+npm run db:push
+npm run db:seed
+```
+
+### 5. Start the Development Servers
+
+#### Backend
+
+```sh
+npm run dev:server
+```
+
+#### Frontend
+
+```sh
+npm run dev:client
+```
+
+The app will be available at [http://localhost:8080](http://localhost:8080).
+
+---
+
+## 🚀 Running in Production
+
+1. Build the client and server:
+
+    ```sh
+    npm run build
+    ```
+
+2. Start the production server:
+
+    ```sh
+    npm start
+    ```
 
 ---
 
