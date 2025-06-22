@@ -226,6 +226,158 @@ The app will be available at [http://localhost:8080](http://localhost:8080).
 
 ---
 
+## 🐳 Running with Docker
+
+### Prerequisites
+
+- Docker Engine 20.10+
+- Docker Compose 2.0+
+- At least 2GB of available RAM
+
+### Quick Start with Docker
+
+1. **Clone the Repository**
+
+    ```sh
+    git clone https://github.com/your-org/plattr.git
+    cd plattr
+    ```
+
+2. **Set Environment Variables**
+
+    Create a `.env` file in the root directory:
+
+    ```env
+    DATABASE_URL=your_postgres_connection_string
+    OPENAI_API_KEY=your_openai_api_key
+    SESSION_SECRET=your_session_secret
+    PORT=8080
+    ```
+
+3. **Run with Docker Compose**
+
+    **Production Mode:**
+    ```sh
+    # Build and start the application
+    docker-compose up -d
+
+    # View logs
+    docker-compose logs -f app
+
+    # Stop the application
+    docker-compose down
+    ```
+
+    **Development Mode (with hot reloading):**
+    ```sh
+    # Build and start with hot reloading
+    docker-compose -f docker-compose.dev.yml up -d
+
+    # View logs
+    docker-compose -f docker-compose.dev.yml logs -f app
+
+    # Stop the application
+    docker-compose -f docker-compose.dev.yml down
+    ```
+
+4. **Database Setup**
+
+    Run migrations after the container is up:
+
+    ```sh
+    # For production
+    docker-compose exec app npm run db:push
+
+    # For development
+    docker-compose -f docker-compose.dev.yml exec app npm run db:push
+    ```
+
+### Manual Docker Build
+
+**Build the Image:**
+```sh
+# Production build
+docker build -t plattr:latest .
+
+# Development build
+docker build -t plattr:dev --target base .
+```
+
+**Run the Container:**
+```sh
+# Production
+docker run -d \
+  --name plattr \
+  -p 8080:8080 \
+  -e DATABASE_URL="your_database_url" \
+  -e OPENAI_API_KEY="your_openai_key" \
+  -e SESSION_SECRET="your_session_secret" \
+  plattr:latest
+
+# Development with volume mounting
+docker run -d \
+  --name plattr-dev \
+  -p 8080:8080 \
+  -v $(pwd):/app \
+  -v /app/node_modules \
+  -e DATABASE_URL="your_database_url" \
+  -e OPENAI_API_KEY="your_openai_key" \
+  -e SESSION_SECRET="your_session_secret" \
+  plattr:dev
+```
+
+### Docker Features
+
+- **Multi-stage builds** for optimized production images
+- **Browser automation support** with Chromium and Python
+- **Security best practices** (non-root user, minimal attack surface)
+- **Health checks** for monitoring
+- **Development and production** configurations
+
+### Troubleshooting Docker
+
+**Common Issues:**
+
+1. **Port Already in Use**
+   ```sh
+   # Check what's using port 8080
+   lsof -i :8080
+   
+   # Use a different port
+   docker run -p 3000:8080 plattr:latest
+   ```
+
+2. **Database Connection Issues**
+   ```sh
+   # Check database connectivity
+   docker-compose exec app node -e "console.log(process.env.DATABASE_URL)"
+   ```
+
+3. **Browser Automation Fails**
+   ```sh
+   # Check Chromium installation
+   docker-compose exec app which chromium-browser
+   
+   # Check Python dependencies
+   docker-compose exec app pip3 list
+   ```
+
+**View Logs:**
+```sh
+# Application logs
+docker-compose logs -f app
+
+# Database logs
+docker-compose logs -f db
+
+# Access container shell
+docker-compose exec app sh
+```
+
+For detailed Docker documentation, see [DOCKER.md](DOCKER.md).
+
+---
+
 ## 👥 Contributors
 
 - [Akshat](https://github.com/akkigupta97)
