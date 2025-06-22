@@ -5,7 +5,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ---
 
-## 🚀 Objective
+## Objective
 
 **Merchant Assistant** solves the chaos of multi-platform management for merchants by:
 - Providing a single conversational interface (WhatsApp, Claude, or Web Bot) for all merchant operations.
@@ -14,7 +14,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ---
 
-## 🛠️ Features
+## Features
 
 - **Conversational Interface:** Interact via WhatsApp, Claude, or Web Bot.
 - **Unified Platform Management:** Update offers, timings, and campaigns across Swiggy, Zomato, Magicpin, ONDC, and more.
@@ -26,7 +26,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 /server
@@ -67,7 +67,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ---
 
-## 🗄️ Database Schema
+## Database Schema
 
 - **Merchants:** Profile, contact, store timings, delivery settings
 - **Platforms:** Connections, credentials, sync status
@@ -75,7 +75,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ---
 
-## 🧠 AI Assistant
+## AI Assistant
 
 - Context-aware chat for offers, promotions, settings, and analytics
 - OpenAI GPT-4o integration
@@ -84,7 +84,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ---
 
-## 📊 Analytics & Reporting
+## Analytics & Reporting
 
 - Revenue, order tracking, and growth metrics
 - Chart visualizations and platform comparisons
@@ -93,7 +93,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ---
 
-## 🚦 Alerting & Monitoring
+## Alerting & Monitoring
 
 - Real-time alert monitor (deductions, rating drops, anomalies)
 - Notification system (email, Telegram)
