@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Merchant dashboard specific colors */
+  --merchant-primary: hsl(207, 80%, 45%);
+  --merchant-secondary: hsl(122, 43%, 28%);
+  --merchant-accent: hsl(36, 100%, 50%);
+  --merchant-success: hsl(122, 39%, 49%);
+  --merchant-error: hsl(4, 90%, 58%);
+  --merchant-warning: hsl(36, 100%, 50%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .merchant-primary {
+    background-color: var(--merchant-primary);
+    color: var(--primary-foreground);
+  }
+  
+  .merchant-secondary {
+    background-color: var(--merchant-secondary);
+    color: var(--primary-foreground);
+  }
+  
+  .merchant-accent {
+    background-color: var(--merchant-accent);
+    color: var(--primary-foreground);
+  }
+  
+  .merchant-success {
+    background-color: var(--merchant-success);
+    color: var(--primary-foreground);
+  }
+  
+  .merchant-error {
+    background-color: var(--merchant-error);
+    color: var(--primary-foreground);
+  }
+  
+  .merchant-warning {
+    background-color: var(--merchant-warning);
+    color: var(--primary-foreground);
+  }
+  
+  .tab-active {
+    @apply border-b-2 border-blue-600 text-blue-600;
+  }
+  
+  .platform-connected {
+    @apply bg-green-50 border-green-200;
+  }
+  
+  .platform-disconnected {
+    @apply bg-red-50 border-red-200;
+  }
+  
+  .metric-card {
+    @apply bg-white rounded-lg shadow-sm border p-4 sm:p-6 hover:shadow-md transition-shadow;
+  }
+  
+  .quick-action-btn {
+    @apply p-3 sm:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-center transition-colors;
+  }
+  
+  .chat-message-user {
+    @apply bg-blue-600 text-white rounded-lg p-3 max-w-xs sm:max-w-md ml-auto;
+  }
+  
+  .chat-message-assistant {
+    @apply bg-gray-100 text-gray-900 rounded-lg p-3 max-w-xs sm:max-w-md;
+  }
+
+  .alert-critical {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+
+  .alert-warning {
+    @apply bg-yellow-50 border-yellow-200 text-yellow-800;
+  }
+
+  .alert-info {
+    @apply bg-blue-50 border-blue-200 text-blue-800;
+  }
+
+  .status-online {
+    @apply bg-green-500;
+  }
+
+  .status-offline {
+    @apply bg-red-500;
+  }
+
+  .status-warning {
+    @apply bg-yellow-500;
+  }
+
+  .floating-fab {
+    @apply fixed bottom-6 right-6 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 z-50;
+  }
+
+  .floating-fab:hover {
+    transform: scale(1.05);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
