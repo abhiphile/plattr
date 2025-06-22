@@ -327,13 +327,6 @@ docker run -d \
 ```
 ---
 
-## 👥 Contributors
-
-- [Akshat](https://github.com/akkigupta97)
-- [Abinash](https://github.com/abinashsena)
-
----
-
 ## 📝 Maintenance Guidelines
 
 - **Security:** Never store or log merchant credentials in plaintext. Use environment variables and secure vaults for secrets.
@@ -366,10 +359,8 @@ We welcome contributions! To contribute:
 ## 🧭 Roadmap
 
 - [X] WhatsApp and Web Bot conversational interface
-- [X] Secure login and action execution for Swiggy, Zomato, Magicpin
-- [X] Agentic AI for multi-step task automation
+- [X] Secure login and action execution for Swiggy, Zomato
 - [X] Proactive anomaly and opportunity alerts
-- [X] Insights dashboard for merchants
 
 ---
 
