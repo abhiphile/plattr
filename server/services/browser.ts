@@ -137,8 +137,6 @@ async def main(task_data: str):
                 html += f'<td class="screenshot-cell"><img class="screenshot" src="data:image/png;base64,{screenshot}" alt="Screenshot Step {i+1}"/></td>'
             else:
                 html += f'<td class="screenshot-cell"></td>'
-            html += f'<td class="goal">{goal}</td>'
-            html += f'<td class="monospace">{thinking}</td>'
             html += f'<td class="monospace">{extracted_content}</td>'
             html += '</tr>'
 
