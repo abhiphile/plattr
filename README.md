@@ -105,11 +105,3 @@ For questions, suggestions, or support, open an issue or contact [Abinash](mailt
 ---
 
 *Empowering merchants to focus on growth, not grunt work!*
-```
-
-**How to use this README:**
-- Replace `[Your Team/Collaborators Here]` and contact details as appropriate.
-- Add or update the roadmap as features are built.
-- Place this file at the root of your repository as `README.md`.
-
-Let me know if you want a more detailed section for setup, API usage, or contribution examples!
