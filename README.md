@@ -7,8 +7,8 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ## Objective
 
-**Merchant Assistant** solves the chaos of multi-platform management for merchants by:
-- Providing a single conversational interface (WhatsApp, Claude, or Web Bot) for all merchant operations.
+**Platrr** solves the chaos of multi-platform management for merchants by:
+- Providing a single conversational interface for all merchant operations.
 - Securely logging into partner portals and executing merchant commands (change offers, opt in/out of promotions, run campaigns, update timings, etc.).
 - Using agentic AI to autonomously complete complex, multi-step tasks and proactively alert merchants about anomalies, opportunities, and trends.
 
@@ -16,7 +16,7 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 
 ## Features
 
-- **Conversational Interface:** Interact via WhatsApp, Claude, or Web Bot.
+- **Conversational Interface:** Interact via a unified interface.
 - **Unified Platform Management:** Update offers, timings, and campaigns across Swiggy, Zomato, Magicpin, ONDC, and more.
 - **Secure Portal Integration:** Securely log in and perform actions on partner portals.
 - **Agentic AI:** 
@@ -72,15 +72,6 @@ A unified, AI-powered assistant that empowers merchants to manage all their aggr
 - **Merchants:** Profile, contact, store timings, delivery settings
 - **Platforms:** Connections, credentials, sync status
 - **Offers:** Promotions, discount types, scheduling
-
----
-
-## AI Assistant
-
-- Context-aware chat for offers, promotions, settings, and analytics
-- OpenAI GPT-4o integration
-- Conversation history and context persistence
-- Action suggestions and workflow automation
 
 ---
 
@@ -358,10 +349,9 @@ We welcome contributions! To contribute:
 
 ## 🧭 Roadmap
 
-- [X] WhatsApp and Web Bot conversational interface
-- [X] Secure login and action execution for Swiggy, Zomato
+- [X] Automated end-to-end pipeline for automated workflow management 
+- [X] Secure login and action execution for MagicPin
 - [X] Proactive anomaly and opportunity alerts
-
 ---
 
 ## 📄 License
